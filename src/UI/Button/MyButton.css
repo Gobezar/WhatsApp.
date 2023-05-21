@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+
+.myBtn {
+  font-size: 18px;
+  font-family: 'Tinos', serif;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px  0;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+}
+
+.myBtn:hover {
+  background-color: #bcc2f7;
+}
+
+.myBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: rgba(37, 211, 102, 1);
+  color: #888;
+  border: 1px solid #ccc;
+
+}

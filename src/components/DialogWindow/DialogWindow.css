@@ -1,0 +1,102 @@
+.dialogWindow {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.dialogHeaderDiv {
+    margin-bottom: auto;
+    padding-top: 2.3%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    background-color:#f0f2f5;
+    min-height: 7%;
+
+}
+
+.messagesDiv {
+    margin-top: auto;
+}
+.inputDiv {
+    width: 80%;
+    margin-top: auto;
+}
+.buttonDiv {
+    padding-left: 7px;
+    margin-top: auto;
+    margin-left: 15px;
+}
+
+.resetDiv {
+    margin-top: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.buttonsDiv {
+    display: flex;
+    margin-top: auto;
+    margin-right: 10px;
+
+}
+
+.textMessageInput {
+    display: flex;
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #616161;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+
+} 
+
+.myBtn {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #616161;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 10px  0;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .myBtn:hover {
+    background-color: #bcc2f7;
+  }
+
+  .myBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f2f2f2;
+    color: #888;
+    border: 1px solid #ccc;
+  }
+
+
+  .resetButton {
+    font-size: 30px;
+    background: none;
+    border: none;
+    padding: 7px 10px 7px 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+
+  .resetButton:hover {
+    background-color: #b9bcd1;
+    border-radius: 50%;
+  }
+
+  .resetButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f2f2f2;
+    color: #888;
+    border: 1px solid #ccc;
+  }

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+.loginPageImgDiv {
+    text-align: center;
+}
+
+.loginPage {
+    margin-top: 30px;
+}
+
+.loginPage h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loginPageInputDiv {
+    text-align: center;
+    margin: 20px;
+}
+
+.loginPageInput {
+    width: calc(45% - 22px);
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #00000080;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.loginPageButtonDiv {
+    text-align: center;
+}
+
+.loginPageButton {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 8px 40px;
+    background-color: #fff;
+    color: black;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.loginPageButton:hover {
+    background-color: rgba(1, 189, 42, 0.877);
+    color: #fff;
+    border: none;
+}
+
+.login_warning {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}

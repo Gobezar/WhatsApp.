@@ -1,0 +1,45 @@
+.mainPage {
+    height: 100%;
+    display: flex;
+}
+
+.leftWindow {
+    width: 30%;
+    min-height: 100vh;
+    background-color: #fff;
+    position: relative;
+  height: 100vh; 
+}
+
+.rightWindow {
+    width: 70%;
+    min-height: 100vh;
+    background-color: lightgray;
+    border-left: 1px solid #00000042;
+}
+
+.exitButtonDiv {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    text-align: left; 
+    margin-left: 20px;
+    padding: 10px 0;
+  }
+
+.exitButton {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+  }
+
+.exitButton:hover {
+    background-color: #d63c3c;
+    color: #fff;
+
+}

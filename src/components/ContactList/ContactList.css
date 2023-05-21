@@ -1,0 +1,64 @@
+
+.itemSubscribers:hover {
+    cursor: pointer;
+    background-color: rgba(37, 211, 102, 1);
+}
+
+.itemSubscriber {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid #00000042 ;
+}
+
+.itemSubscriber span {
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.itemSubscriber p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+.arraySubscribersUl {
+    padding: 0;
+    margin: 0;
+}
+
+.arraySubscribersLi {
+    list-style-type: none;
+    border: none;
+}
+
+.contactListImgDiv {
+    margin-right: 20px;
+}
+
+.contactListImgDiv img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #07070734;
+}
+
+.itemSubscriberDeleteButton {
+    font-size: 25px;
+    background: none;
+    border: none;
+    margin-right: 10px;
+    padding: 7px 10px 7px 10px;
+
+
+}
+
+.itemSubscriberDeleteButton:hover {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.exitButtonDiv {
+    margin-top: auto;
+}

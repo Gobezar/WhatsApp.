@@ -1,0 +1,43 @@
+.addSubscriberInput {
+    display: flex;
+    width: calc(95% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #616161;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.addSubscriberInputsDiv {
+    background-color: #f0f2f5;
+    padding-top: 0;
+    padding-left: 4%;
+    padding-bottom: 0.1%;
+    display: flex;
+    align-items: center;
+}
+
+.addSubscriberButton {
+    font-size: 35px;
+    background: none;
+    border: none;
+    padding: 7px 10px 7px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.addSubscriberButton:hover {
+    background-color: #d5d8f3;
+    border-radius: 50%;
+}
+
+.addSubscriberButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f2f2f2;
+    color: #888;
+    border: 1px solid #ccc;
+}

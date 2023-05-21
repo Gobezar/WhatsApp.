@@ -1,0 +1,18 @@
+.dialogHeader {
+    display: flex;
+    align-items: center;
+}
+.dialogHeaderImgDiv {
+    margin-right: 20px;
+}
+.dialogHeader img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #07070734;
+}
+
+.dialogHeader p {
+    font-family: 'Montserrat', sans-serif;
+
+}

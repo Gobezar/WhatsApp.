@@ -1,0 +1,40 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.myMessage {
+    text-align: right;
+    margin-right: 3%;
+
+}
+
+.subscriberMessage {
+    text-align: left;
+    margin-left: 3%;
+}
+
+.myMessage span {
+    display: inline-block;
+    background-color: #4af089b2;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    min-width: 70px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.subscriberMessage span {
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    min-width: 70px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+
+}
