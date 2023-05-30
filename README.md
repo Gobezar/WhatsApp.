@@ -1,46 +1,12 @@
-# Getting Started with Create React App
+Билд на <a href='https://whats-app-eta.vercel.app/'>Vercel</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
+Необходимо использовать `npm start` для запуска проекта.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Для теста приложения прикладываю данные для входа: <br/>
+IdInstance 1101820712 ApiTokenInstance	db51abbb11314f7fb777dccf80ddf59a6958cc7c8e9541f5af
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Скриншоты : 
+![Screenshot_96](https://github.com/Gobezar/WhatsApp./assets/105110053/38a99dee-801f-4927-a1ac-be95ed0af147)
+![Screenshot_97](https://github.com/Gobezar/WhatsApp./assets/105110053/175d7f74-41d6-4246-bee3-a6539f74b587)
+![Screenshot_98](https://github.com/Gobezar/WhatsApp./assets/105110053/2e325862-c052-483b-9301-ea0d2feccb31)
