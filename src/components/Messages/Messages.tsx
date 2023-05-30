@@ -19,10 +19,10 @@ console.log (arrayMessages)
     return (
         <div>
             {arrayMessages.map((message: any) => (
-                <div className='messages' key={idMessage}>
+                <div className='messages'>
                     {message.isMy ?
                         <div className='myMessage'>
-                            {/* <span style={{padding:'10px'}}>Я:</span> */}
+                            {/* <span style={{padding:'10px'}}>Я 1:</span> */}
                             <div><span>{message.textMessage}</span></div>
                         </div>
                         :
