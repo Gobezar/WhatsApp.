@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import MyInput from '../../UI/Input/MyInput'
-import MyButton from '../../UI/Button/MyButton'
 import Messages from '../Messages/Messages'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { setMessage, sendMessage,  AcceptMessage, deleteMessage, deleteArrayMessages } from '../../redux/slices/dialogSlice'
@@ -35,27 +34,6 @@ const DialogWindow = () => {
   }, [receiptId, currentSubscriber])
   
 
-    // const AcceptMessage = async () => {
-    //    dispatch(acceptMessage()).then((action) => {
-    //       const receiptId = action.payload;
-    //       console.log(action)
-    //       // DeleteMessage(receiptId);
-    //     });
-    // }
-
-  //   const AcceptMessage = async () => {
-  //     try {
-  //       const { receiptId } = await dispatch(acceptMessage());
-  //       await dispatch(deleteMessage(receiptId));
-  //       console.log('Message accepted and deleted successfully.');
-  //     } catch (error) {
-  //       console.error('Error accepting and deleting message:', error);
-  //     }
-  //  }
-
-    // const DeleteMessage = (receiptId: number) => {
-    //     dispatch(deleteMessage(receiptId))
-    // }
 console.log (currentSubscriber)
 
     return (

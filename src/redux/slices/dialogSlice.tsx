@@ -38,8 +38,6 @@ export const AcceptMessage = createAsyncThunk('dialog/AcceptMessage', async ({ n
     const response = await axios.get(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
     const data = response.data; // Получение данных из ответа сервера
     const message = data.body.messageData?.textMessageData?.textMessage || data.body.messageData?.extendedTextMessageData?.text
-    // const message = data.body.messageData.textMessageData.textMessage
-    //     // message = data.body.messageData.extendedTextMessageData.text
     const receiptId = data.receiptId
     const idMessage = data.body.idMessage
     return { message, receiptId, idMessage, number: `${number}@c.us`, senderId: data.body.senderData.sender }; // Возврат receiptId как результата createAsyncThunk
@@ -52,20 +50,7 @@ export const deleteMessage = createAsyncThunk('dialog/deleteMessage', async (rec
     return result
 })
 
-// export const acceptMessage = createAsyncThunk('dialog/acceptMessage', async () => {
-//     const response = await axios.get(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
-//     const data = response.data; // Получение данных из ответа сервера
-//     const responseMessage = data.body.messageData.extendedTextMessageData.textMessage
-//     const receiptId = data.receiptId; // Извлечение receiptId из данных
-//     deleteMessage(receiptId)
-//     return responseMessage; // Возврат receiptId как результата createAsyncThunk
-// })
 
-// export const deleteMessage = createAsyncThunk('dialog/deleteMessage', async (args: { receiptId: number }) => {
-//     const { receiptId } = args;
-//     const result = await axios.delete(`https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${receiptId}`);
-//     return result;
-//   });
 
 const dialogSlice = createSlice({
     name: 'dialog',

@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { logIn, setIdInstance, setApiTokenInstance } from '../../redux/slices/loginSlice'
-
-import MyButton from '../../UI/Button/MyButton'
-import MyInput from '../../UI/Input/MyInput'
 import '../LoginPage/LoginPage.css'
 
 const LoginPage = () => {

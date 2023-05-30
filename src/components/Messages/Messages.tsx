@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import '../Messages/Messages.css'
 
@@ -22,12 +21,10 @@ console.log (arrayMessages)
                 <div className='messages'>
                     {message.isMy ?
                         <div className='myMessage'>
-                            {/* <span style={{padding:'10px'}}>Я 1:</span> */}
                             <div><span>{message.textMessage}</span></div>
                         </div>
                         :
                         <div  className='subscriberMessage'>
-                            {/* <span>{nameSubscriber? nameSubscriber : 'Аноним'}:</span> */}
                             <div><span>{message}</span></div>
                         </div>
                     }
