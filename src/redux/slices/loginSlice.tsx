@@ -30,9 +30,9 @@ const loginSlice = createSlice({
         localStorage.setItem('auth', '')
         state.idInstance = ''
         state.apiTokenInstance = ''
-        localStorage.setItem('idInstance', '')
-        localStorage.setItem('apiTokenInstance', '')
-      }
+        localStorage.removeItem('idInstance')
+        localStorage.removeItem('apiTokenInstance')
+      }, 
     }
 })
 
