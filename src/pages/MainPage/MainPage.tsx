@@ -17,6 +17,7 @@ const MainPage = () => {
   const dispatch = useAppDispatch()
 
 
+
   return (
     <div className='mainPage'>
       <div className='leftWindow'>

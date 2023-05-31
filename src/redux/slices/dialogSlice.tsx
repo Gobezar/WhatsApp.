@@ -4,12 +4,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 
-
-const idInstance: string | null = localStorage.getItem('idInstance')
-const apiTokenInstance: string | null = localStorage.getItem('apiTokenInstance')
-
-
-
 const initialState: IDialogProps = {
     isLoading: false,
     error: '',
@@ -23,7 +17,9 @@ const initialState: IDialogProps = {
 }
 
 
-export const sendMessage = createAsyncThunk('dialog/sendMessage', async ({ textMessage, chatId }: { textMessage: string, chatId: string },) => {
+export const sendMessage = createAsyncThunk('dialog/sendMessage', async ({ textMessage, chatId }: { textMessage: string, chatId: string },) => {  
+    const idInstance = localStorage.getItem('idInstance');
+    const apiTokenInstance = localStorage.getItem('apiTokenInstance');
     const message = textMessage
     const response = await axios.post(`https://api.green-api.com/waInstance${idInstance}/SendMessage/${apiTokenInstance}`, {
         chatId: `${chatId}@c.us`,
@@ -35,6 +31,8 @@ export const sendMessage = createAsyncThunk('dialog/sendMessage', async ({ textM
 
 
 export const AcceptMessage = createAsyncThunk('dialog/AcceptMessage', async ({ number }: { number: string }) => {
+    const idInstance = localStorage.getItem('idInstance');
+    const apiTokenInstance = localStorage.getItem('apiTokenInstance');
     const response = await axios.get(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
     const data = response.data; // Получение данных из ответа сервера
     const message = data.body.messageData?.textMessageData?.textMessage || data.body.messageData?.extendedTextMessageData?.text
@@ -46,6 +44,8 @@ export const AcceptMessage = createAsyncThunk('dialog/AcceptMessage', async ({ n
 
 
 export const deleteMessage = createAsyncThunk('dialog/deleteMessage', async (receiptId: number) => {
+    const idInstance = localStorage.getItem('idInstance');
+    const apiTokenInstance = localStorage.getItem('apiTokenInstance');
     const response = await axios.delete(`https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${receiptId}`)
     const result = response.data
     return result
