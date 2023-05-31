@@ -88,6 +88,7 @@ const dialogSlice = createSlice({
         [sendMessage.rejected.type]: (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
+            alert('При отправке сообщения возникла ошибка. Проверьте правильность введённых данных и повторите попытку.')
         },
 
         [AcceptMessage.fulfilled.type]: (state, action) => {

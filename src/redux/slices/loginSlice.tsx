@@ -28,13 +28,17 @@ const loginSlice = createSlice({
       logOut (state) {
         state.isAuth = false
         localStorage.setItem('auth', '')
-        state.idInstance = ''
-        state.apiTokenInstance = ''
+        // state.idInstance = ''
+        // state.apiTokenInstance = ''
         localStorage.removeItem('idInstance')
         localStorage.removeItem('apiTokenInstance')
       }, 
+      setLocalStorage (state) {
+        localStorage.setItem('idInstance', state.idInstance)
+        localStorage.setItem('apiTokenInstance', state.apiTokenInstance)
+      }
     }
 })
 
-export const { logIn, logOut, setIdInstance, setApiTokenInstance } = loginSlice.actions;
+export const { logIn, logOut, setIdInstance, setApiTokenInstance, setLocalStorage } = loginSlice.actions;
 export default loginSlice.reducer

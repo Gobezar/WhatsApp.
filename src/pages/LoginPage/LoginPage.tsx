@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
-import { logIn, setIdInstance, setApiTokenInstance } from '../../redux/slices/loginSlice'
+import { logIn, setIdInstance, setApiTokenInstance, setLocalStorage } from '../../redux/slices/loginSlice'
 import '../LoginPage/LoginPage.css'
 
 const LoginPage = () => {
@@ -35,7 +35,7 @@ const LoginPage = () => {
           <form onSubmit={login}>
               <div className='loginPageInputDiv'><input className='loginPageInput' value={idInstance} onChange={onChangeId} type="text" placeholder="Введите Ваш idInstance"></input></div>
               <div className='loginPageInputDiv'><input className='loginPageInput' value={apiTokenInstance} onChange={onChangeApi} type="text" placeholder="Введите Ваш apiTokenInstance"></input></div>
-              <div className='loginPageButtonDiv'><button className='loginPageButton'>Войти</button></div>
+              <div className='loginPageButtonDiv'><button className='loginPageButton' onClick={() => dispatch(dispatch(setLocalStorage))}>Войти</button></div>
           </form>
           <div className='login_warning'><p>Это тестовая форма авторизации.<br />
           Для получения параметров запроса idInstance и apiTokenInstance обратитесь <a href='https://console.green-api.com/'>по данному адресу.</a> <br/>
