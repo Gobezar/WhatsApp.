@@ -17,8 +17,6 @@ const MainPage = () => {
   const dispatch = useAppDispatch()
 
 
-console.log (isAuth)
-
   return (
     <div className='mainPage'>
       <div className='leftWindow'>

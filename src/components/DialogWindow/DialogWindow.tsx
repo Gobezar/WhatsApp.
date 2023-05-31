@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import MyInput from '../../UI/Input/MyInput'
+import MyButton from '../../UI/Button/MyButton'
 import Messages from '../Messages/Messages'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
-import { setMessage, sendMessage,  AcceptMessage, deleteMessage, deleteArrayMessages } from '../../redux/slices/dialogSlice'
+import { setMessage, sendMessage, AcceptMessage, deleteMessage, deleteArrayMessages } from '../../redux/slices/dialogSlice'
 import '../DialogWindow/DialogWindow.css'
 import DialogHeader from '../DialogHeader/DialogHeader'
-import {DeleteTwoTone} from '@ant-design/icons'
+import { DeleteTwoTone } from '@ant-design/icons'
 
 const DialogWindow = () => {
 
@@ -25,19 +26,19 @@ const DialogWindow = () => {
   }
 
   useEffect(() => {
-    const intervalId = setInterval (() => {
-      dispatch(AcceptMessage({number: currentSubscriber.number}))
+    const intervalId = setInterval(() => {
+      dispatch(AcceptMessage({ number: currentSubscriber.number }))
       dispatch(deleteMessage(receiptId))
 
     }, 3000)
-    return () => {clearInterval(intervalId)}
+    return () => { clearInterval(intervalId) }
   }, [receiptId, currentSubscriber])
-  
 
-console.log (currentSubscriber)
 
-    return (
-      <div className='dialogWindow'>
+  return (
+
+
+    <div className='dialogWindow' style={{ maxHeight: '100vh' }}>
       <div className='dialogHeaderDiv'><DialogHeader /></div>
       {Object.keys(currentSubscriber).length ? (
         <div className='messagesDiv'>
@@ -55,7 +56,7 @@ console.log (currentSubscriber)
             onClick={() => dispatch(deleteArrayMessages())}
             className='resetButton'
           >
-            <DeleteTwoTone twoToneColor="rgba(37, 211, 102, 1)"/>
+            <DeleteTwoTone twoToneColor="rgba(37, 211, 102, 1)" />
           </button>
         </div>
         <div className='inputDiv'>

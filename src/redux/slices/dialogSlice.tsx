@@ -38,6 +38,7 @@ export const AcceptMessage = createAsyncThunk('dialog/AcceptMessage', async ({ n
     const response = await axios.get(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
     const data = response.data; // Получение данных из ответа сервера
     const message = data.body.messageData?.textMessageData?.textMessage || data.body.messageData?.extendedTextMessageData?.text
+   
     const receiptId = data.receiptId
     const idMessage = data.body.idMessage
     return { message, receiptId, idMessage, number: `${number}@c.us`, senderId: data.body.senderData.sender }; // Возврат receiptId как результата createAsyncThunk
@@ -97,7 +98,7 @@ const dialogSlice = createSlice({
         },
         [AcceptMessage.rejected.type]: (state, action) => {
             state.error = action.payload;
-            console.log('ошибка', state.error)
+            console.log('ошибка в получении данных (входящие сообщения отсутствуют)', state.error)
 
         },
 
