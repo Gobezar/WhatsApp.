@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { useAppSelector } from './hooks/reduxHooks';
 import MainPage from './pages/MainPage/MainPage';

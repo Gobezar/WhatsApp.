@@ -40,7 +40,6 @@ export const AcceptMessage = createAsyncThunk('dialog/AcceptMessage', async ({ n
     const apiTokenInstance = localStorage.getItem('apiTokenInstance');
     const response = await axios.get(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
     const data = response.data; // Получение данных из ответа сервера
-    console.log(data)
     const message = data.body.messageData?.textMessageData?.textMessage || data.body.messageData?.extendedTextMessageData?.text
    
     const receiptId = data.receiptId
@@ -126,6 +125,5 @@ const dialogSlice = createSlice({
     }
 })
 
-// ничего не менялось
 export const { setMessage, deleteArrayMessages } = dialogSlice.actions;
 export default dialogSlice.reducer
