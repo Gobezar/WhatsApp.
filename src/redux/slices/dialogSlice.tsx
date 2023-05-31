@@ -7,11 +7,16 @@ import axios from 'axios'
 const initialState: IDialogProps = {
     isLoading: false,
     error: '',
-    message: {
+    sendingMessage: {
         isMy: true,
         textMessage: '',
         idMessage: ''
     },
+    acceptedMessage: {
+        isMy: false,
+        textMessage: '',
+        idMessage: ''
+    }, 
     arrayMessages: [],
     receiptId: 0,
 }
@@ -35,6 +40,7 @@ export const AcceptMessage = createAsyncThunk('dialog/AcceptMessage', async ({ n
     const apiTokenInstance = localStorage.getItem('apiTokenInstance');
     const response = await axios.get(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
     const data = response.data; // Получение данных из ответа сервера
+    console.log(data)
     const message = data.body.messageData?.textMessageData?.textMessage || data.body.messageData?.extendedTextMessageData?.text
    
     const receiptId = data.receiptId
@@ -58,7 +64,7 @@ const dialogSlice = createSlice({
     initialState,
     reducers: {
         setMessage(state, action) {
-            state.message.textMessage = action.payload
+            state.sendingMessage.textMessage = action.payload
         },
         deleteArrayMessages (state) {
             state.arrayMessages = []
@@ -68,13 +74,13 @@ const dialogSlice = createSlice({
     extraReducers: {
         [sendMessage.fulfilled.type]: (state, action) => {
             state.error = '';
-            state.message = {
+            state.sendingMessage = {
                 isMy: true,
-                textMessage: state.message.textMessage,
+                textMessage: state.sendingMessage.textMessage,
                 idMessage: action.payload.idMessage
             }
-            state.arrayMessages.push(state.message)
-            state.message = {
+            state.arrayMessages.push(state.sendingMessage)
+            state.sendingMessage = {
                 isMy: true,
                 textMessage: '',
                 idMessage: action.payload.idMessage
@@ -92,9 +98,22 @@ const dialogSlice = createSlice({
         },
 
         [AcceptMessage.fulfilled.type]: (state, action) => {
-            if (state.receiptId !== action.payload.receiptId && state.message.idMessage !== action.payload.idMessage) state.arrayMessages.push(action.payload.message)
-            state.receiptId = action.payload.receiptId
-        },
+            if (state.receiptId !== action.payload.receiptId && state.sendingMessage.idMessage !== action.payload.idMessage) {
+                const newMessage = {
+                    isMy: false,
+                    textMessage: action.payload.message,
+                    idMessage: action.payload.idMessage
+                };
+                state.acceptedMessage = newMessage;
+                state.arrayMessages.push(newMessage);
+                state.acceptedMessage = {
+                    isMy: false,
+                    textMessage: '',
+                    idMessage: action.payload.idMessage
+                };
+            }
+            state.receiptId = action.payload.receiptId;
+        },        
         [AcceptMessage.pending.type]: (state) => {
         },
         [AcceptMessage.rejected.type]: (state, action) => {
@@ -107,5 +126,6 @@ const dialogSlice = createSlice({
     }
 })
 
+// ничего не менялось
 export const { setMessage, deleteArrayMessages } = dialogSlice.actions;
 export default dialogSlice.reducer

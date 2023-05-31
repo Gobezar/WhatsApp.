@@ -11,8 +11,8 @@ const DialogWindow = () => {
 
   const { currentSubscriber } = useAppSelector(state => state.contactsSlice)
   const chatId = currentSubscriber.number;
-  const { message, receiptId, arrayMessages } = useAppSelector(state => state.dialogSlice)
-  const textMessage = message.textMessage
+  const { sendingMessage, receiptId, arrayMessages } = useAppSelector(state => state.dialogSlice)
+  const textMessage = sendingMessage.textMessage
   const dispatch = useAppDispatch();
   const buttonRef = useRef<HTMLButtonElement>(null);
 

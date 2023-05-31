@@ -25,7 +25,8 @@ export interface IMessage {
 export interface IDialogProps {
     isLoading: boolean;
     error: string;
-    message: IMessage;
+    sendingMessage: IMessage;
+    acceptedMessage: IMessage;
     arrayMessages: any;
     receiptId: number;
 }
