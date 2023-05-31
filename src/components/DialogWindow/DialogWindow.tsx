@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import MyInput from '../../UI/Input/MyInput'
-import MyButton from '../../UI/Button/MyButton'
 import Messages from '../Messages/Messages'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { setMessage, sendMessage, AcceptMessage, deleteMessage, deleteArrayMessages } from '../../redux/slices/dialogSlice'
@@ -15,6 +14,8 @@ const DialogWindow = () => {
   const { message, receiptId, arrayMessages } = useAppSelector(state => state.dialogSlice)
   const textMessage = message.textMessage
   const dispatch = useAppDispatch();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
 
 
   const onChangeTextMessage = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -24,6 +25,13 @@ const DialogWindow = () => {
   const toSendMessage = () => {
     dispatch(sendMessage({ textMessage, chatId }))
   }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      buttonRef.current?.click();
+    }
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -60,13 +68,14 @@ const DialogWindow = () => {
           </button>
         </div>
         <div className='inputDiv'>
-          <MyInput value={textMessage} onChange={onChangeTextMessage} type="text" placeholder="Текст сообщения..." className='textMessageInput' />
+          <MyInput value={textMessage} onChange={onChangeTextMessage} onKeyDown={handleKeyDown} type="text" placeholder="Текст сообщения..." className='textMessageInput' />
         </div>
         <div className='buttonDiv'>
           <button
             disabled={Object.keys(currentSubscriber).length ? false : true}
             onClick={toSendMessage}
             className='myBtn'
+            ref={buttonRef}
           >
             Отправить
           </button>
