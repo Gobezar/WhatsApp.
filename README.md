@@ -4,7 +4,7 @@
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Демонстрация экрана: 
-[screen-recording (2).webm](https://github.com/Gobezar/WhatsApp./assets/105110053/c59fbffd-a59b-42ab-8226-d4dd9c28ffc2)
+[screen-recording (2).webm](https://github.com/Gobezar/WhatsApp./assets/105110053/7e257b01-04d9-42ae-bab7-3541b0e6cb5c)
 
 
 Для теста приложения прикладываю данные для входа: <br/>
