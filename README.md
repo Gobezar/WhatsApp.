@@ -3,8 +3,7 @@
 Необходимо использовать `npm start` для запуска проекта.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Демонстрация экрана: 
-[screen-recording (2).webm](https://github.com/Gobezar/WhatsApp./assets/105110053/7e257b01-04d9-42ae-bab7-3541b0e6cb5c)
+[screen-recording (2).webm](https://github.com/Gobezar/WhatsApp./assets/105110053/614b8210-739f-4a28-821f-320ab6c7d3b3)
 
 
 Для теста приложения прикладываю данные для входа: <br/>
